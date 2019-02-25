@@ -7,7 +7,7 @@
 1. Create an S3 bucket for static hosting (allow public access) and enable versioning
 2. Upload the contents of the HTML folder to S3
 3. Make the website publicly accessible. Use the following bucket policy
-```
+```json
 {
     "Version": "2012-10-17",
     "Id": "Policy1497053408897",

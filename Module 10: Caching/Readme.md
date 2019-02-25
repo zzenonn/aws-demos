@@ -1,7 +1,7 @@
 # Caching with Cloudfront
 
 ## Create an S3 Bucket
-1. Create an S3 bucket that should be made public. Use the following bucket policy
+1. Create an S3 bucket that should be made public.
 2. Upload the contents of the S3 folder to the S3 bucket
 
 ## Create a Cloudfront Distribution
