@@ -15,7 +15,6 @@ wget https://us-west-2-aws-training.s3.amazonaws.com/awsu-ilt/AWS-100-ESS/v4.2/l
 tar xvfz lab2-app.tar.gz
 chown apache:root /var/www/html/rds.conf.php
 fi
-
 ```
 2. Security Groups should allow HTTP
 3. Create an ALB and add the three instances to the security group

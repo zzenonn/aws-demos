@@ -1,3 +1,3 @@
 # Microservices
 
-See https://github.com/zzenonn/AWSDeploymentInfrastructure for a sample.
+See bitcoinpricediscord.py for a sample lambda function.
