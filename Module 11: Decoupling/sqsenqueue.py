@@ -3,14 +3,13 @@
 from time import sleep
 
 import boto3
-
+import sys
 
 # Create SQS client
 sqs = boto3.client('sqs')
 
-queue_url = 'https://sqs.ap-southeast-1.amazonaws.com/883779074323/TestQueue'
 
-def enqueue(counter):
+def enqueue(queue_url, counter):
 	sleep(2)
 	# Send message to SQS queue
 	response = sqs.send_message(
@@ -42,6 +41,6 @@ def enqueue(counter):
 if __name__ == "__main__":
 	counter = 0
 	while(True):
-		enqueue(counter)
+		enqueue(sys.argv[1], counter)
 		counter = counter + 1
 		print("Enqueuing Week " + str(counter))

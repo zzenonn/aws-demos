@@ -1,13 +1,12 @@
 #!/usr/bin/python3.6
 
 import boto3
+import sys
 
 # Create SQS client
 sqs = boto3.client('sqs')
 
-queue_url = 'https://sqs.ap-southeast-1.amazonaws.com/883779074323/TestQueue'
-
-def dequeue():
+def dequeue(queue_url):
 	# Receive message from SQS queue
 	response = sqs.receive_message(
     	QueueUrl=queue_url,
@@ -35,6 +34,6 @@ def dequeue():
 if __name__ == "__main__":
 	while(True):
 		try:
-			dequeue()
+			dequeue(sys.argv[1])
 		except KeyError:
 			print('No messages on the queue!')
