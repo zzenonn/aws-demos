@@ -17,11 +17,6 @@ Description: >
 # Resources section
 ######################
 
-Parameters:
-  Changelog:
-    Description: A description of all the changes made in this stack. This is required for the template to update.
-    Type: String
-
 Resources:
 
   ## VPC
@@ -377,10 +372,6 @@ Resources:
 ######################
 
 Outputs:
-  
-  Changelog:
-    Description: A description of all the changes made in this stack. This is required for the template to update.
-    Value: !Ref Changelog
 
   VPC:
     Description: VPC ID
