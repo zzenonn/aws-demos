@@ -18,7 +18,7 @@ def dequeue(queue_url):
         	'All'
     	],
     	VisibilityTimeout=30,
-    	WaitTimeSeconds=0
+    	WaitTimeSeconds=5
 	)
 
 	message = response['Messages'][0]
