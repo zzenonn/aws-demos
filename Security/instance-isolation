@@ -1,0 +1,41 @@
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].InstanceId
+    aws ec2 create-tags  --resources 'i-0da0df30da30e088d' "Key=Environment,Value=Quarantine:BAD001"
+    aws ec2 create-tags  --resources "i-0da0df30da30e088d" --tags "Key=Environment,Value=Quarantine:BAD001"
+    aws ec2 describe-instance --instance-id i-0da0df30da30e088d
+    aws ec2 create-tags  --resources "i-0da0df30da30e088d" --tags "Key=Environment,Value=Quarantine:BAD001"
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].InstanceId
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].InstanceId
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].Tags
+    aws ec2 create-tags  --resources "i-0da0df30da30e088d" --tags "Key=Environment,Value=Quarantine:BAD001"
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].InstanceId
+    aws ec2 create-tags  --resources "i-0da0df30da30e088d" --tags "Key=Environment,Value=Quarantine:BAD001"
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].Tags
+    aws elb deregister-instances-from-load-balancer  --instances i-0da0df30da30e088d --load-balancer-name DemoALB
+    aws elb deregister-instances-from-load-balancer  --instances i-0da0df30da30e088d --load-balancer-name DemoALB
+    aws elb deregister-instances-from-load-balancer  --instances i-0da0df30da30e088d --load-balancer-name DemoALB
+    aws elb describe-load-balancers
+    aws elb describe-load-balancers --region ap-southeast-1
+    aws elb describe-load-balancers --region ap-southeast-2
+    aws elbv2
+    aws help
+    aws elbv2 describe-load-balancers
+    aws elbv2 deregister-targets --instances i-0da0df30da30e088d --load-balancer-name DemoALB
+    aws elbv2 deregister-targets --target-group-arn "arn:aws:elasticloadbalancing:ap-southeast-1:883779074323:targetgroup/DemoApp/c394d34139e88e41" --targets Id=i-0da0df30da30e088d
+    aws elbv2 describe-load-balancers
+    aws elbv2   describe-target-groups
+    aws elbv2   describe-target-groups
+    aws ec2 describe-security-groups
+    aws ec2 describe-security-groups --filter "Name=group-id, Values=sg-0b6aa3bdc73f00c41"
+    aws ec2 describe-security-groups --filter "Name=group-id, Values=sg-05b7a7683d3dd5892" --query SecurityGroups[*].IpPermissions
+    aws ec2 describe-security-groups --filter "Name=group-id, Values=sg-05b7a7683d3dd5892" --query SecurityGroups[*].IpPermissionsEgress
+    aws ec2 describe-security-groups --filter "Name=group-id, Values=sg-0b6aa3bdc73f00c41"
+    aws ec2 modify-instance-attribute --instance-id i-0da0df30da30e088d --groups sg-0b6aa3bdc73f00c41
+    aws ec2 modify-instance-attribute --instance-id i-0da0df30da30e088d --attribute disableApiTermination --value True
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*]
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
+    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
+    aws ec2 create-snapshot --volume vol-0a5b1f583de54bdee --description "RespondersName:Zenon-04-18-2020-BAD001"
+

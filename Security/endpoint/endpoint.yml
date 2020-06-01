@@ -1,0 +1,64 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  This template is for provisioning of 
+  interface and gateway endpoints for 
+  demo purposes
+Parameters:
+  VPC:
+    Type: 'AWS::EC2::VPC::Id'
+  Subnet:
+    Type: 'AWS::EC2::Subnet::Id'
+  SecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup::Id'
+    Description: Security group used by the interface endpoint
+  RouteTable:
+    Type: String
+    Description: Route table ID where Gateway endpoint is deployed
+
+Resources:
+  S3GatewayEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      RouteTableIds:
+        - !Ref RouteTable
+      ServiceName: 'com.amazonaws.ap-southeast-1.s3'
+      VpcEndpointType: Gateway
+      VpcId: !Ref VPC
+
+  SSMInterfaceEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      PrivateDnsEnabled: true
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      ServiceName: 'com.amazonaws.ap-southeast-1.ssm'
+      SubnetIds:
+        - !Ref Subnet
+      VpcEndpointType: Interface
+      VpcId: !Ref VPC
+
+  SSMMessagesEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      PrivateDnsEnabled: true
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      ServiceName: 'com.amazonaws.ap-southeast-1.ssmmessages'
+      SubnetIds:
+        - !Ref Subnet
+      VpcEndpointType: Interface
+      VpcId: !Ref VPC
+
+  Ec2MessagesEndpoint:
+    Type: AWS::EC2::VPCEndpoint
+    Properties:
+      PrivateDnsEnabled: true
+      SecurityGroupIds:
+        - !Ref SecurityGroup
+      ServiceName: 'com.amazonaws.ap-southeast-1.ec2messages'
+      SubnetIds:
+        - !Ref Subnet
+      VpcEndpointType: Interface
+      VpcId: !Ref VPC
+
+
