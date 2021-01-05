@@ -10,7 +10,7 @@ sqs = boto3.client('sqs')
 
 
 def enqueue(queue_url, counter):
-	sleep(2)
+	sleep(5)
 	# Send message to SQS queue
 	response = sqs.send_message(
 		QueueUrl=queue_url,

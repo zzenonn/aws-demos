@@ -18,18 +18,20 @@ def dequeue(queue_url):
         	'All'
     	],
     	VisibilityTimeout=30,
-    	WaitTimeSeconds=5
+    	WaitTimeSeconds=0
 	)
 
 	message = response['Messages'][0]
 	receipt_handle = message['ReceiptHandle']
+    
+
+	print('Received and deleted message: %s' % message)
 
 	# Delete received message from queue
 	sqs.delete_message(
     	QueueUrl=queue_url,
     	ReceiptHandle=receipt_handle
 	)
-	print('Received and deleted message: %s' % message)
 
 if __name__ == "__main__":
 	while(True):

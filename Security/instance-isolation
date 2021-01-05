@@ -32,10 +32,6 @@
     aws ec2 describe-security-groups --filter "Name=group-id, Values=sg-0b6aa3bdc73f00c41"
     aws ec2 modify-instance-attribute --instance-id i-0da0df30da30e088d --groups sg-0b6aa3bdc73f00c41
     aws ec2 modify-instance-attribute --instance-id i-0da0df30da30e088d --attribute disableApiTermination --value True
-    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].
-    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*]
-    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
-    aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
     aws ec2 describe-instances --filter "Name=private-ip-address,Values=10.0.3.146" --query Reservations[*].Instances[*].BlockDeviceMappings
     aws ec2 create-snapshot --volume vol-0a5b1f583de54bdee --description "RespondersName:Zenon-04-18-2020-BAD001"
 
